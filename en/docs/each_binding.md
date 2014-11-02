@@ -1,8 +1,18 @@
 # Each binding
 
-**NOTE:** Currently, one is not able to set the value of an HTML ```id``` attribute with Volt. This will be changed in the future. Learn more here.
+**NOTE:** Currently, one is not able to set the value of an HTML ```id``` attribute through Volt. This will be changed in the future. You can learn more, here. 
 
-For iteration over objects, you can use ```.each```
+Below is an an example of what ***will not*** work:
+
+```html
+{{ each _items do |item| }}
+  <p id="{{ index }}">{{ item }}</p>
+{{ end }}
+```
+
+## Iteration of objects
+
+For iteration over objects, one can simply use ```.each``` within a given template.
 
 ```html
 {{ _items.each do |item| }}
@@ -10,9 +20,11 @@ For iteration over objects, you can use ```.each```
 {{ end }}
 ```
 
-Above, if ```_items``` is an array, the block will be rendered for each item in the array, setting ```item``` to the value of the array element.
+Above, if ```_items``` is an array, the block will be rendered for each item in the array, where ```item``` is the value of the array element in question.
 
-You can also access the position of the item in the array with the #index method.
+## Iteration of objects with index values
+
+You can also access the position of an item in the array, using the #index method. Using the #each method in this way will implicitly call the #each_with_index method.
 
 ```html
 {{ each _items do |item| }}
@@ -20,14 +32,12 @@ You can also access the position of the item in the array with the #index method
 {{ end }}
 ```
 
-Note: This will be switched to each_with_index
-
-For the array: ```['one', 'two', 'three']``` this would print:
+For the array: ```['one', 'two', 'three']```, this would print:
 
     0. one
     1. two
     2. three
 
-You can do ```{{ index + 1 }}``` to correct the zero offset.
+The zero offset ugliness is easily corrected by doing something like, ```{{ index + 1 }}```.
 
 When items are removed or added to the array, the ```each``` binding automatically and intelligently adds or removes the items from/to the DOM.
