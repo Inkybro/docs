@@ -1,5 +1,7 @@
 # Each binding
 
+**NOTE:** Currently, one is not able to set the value of an HTML ```id``` attribute with Volt. This will be changed in the future. Learn more here.
+
 For iteration over objects, you can use ```.each```
 
 ```html
