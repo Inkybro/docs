@@ -37,7 +37,7 @@ bundle exec volt s
 
 In your browser, navigate to http://localhost:3000, and you'll see the default Volt app.
 
-One cool thing to note about Volt is that your app will automatically reload if you change a file. To test this out yourself, open up the file ```todos_example/app/main/views/main/main.html``` and edit the name inside ```html <h3 class="text-muted">``` within ```html <div class="header">```. Save the file, and keep an eye on your browser.
+One cool thing to note about Volt is that your app will automatically reload if you change a file. To test this out yourself, open up the file ```todos_example/app/main/views/main/main.html``` and edit the name inside ```<h3 class="text-muted">``` within ```<div class="header">```. Save the file, and keep an eye on your browser.
 
 Now, we can get down to some real code!
 
@@ -55,7 +55,7 @@ Hey, don't copy and paste. Copy using your eyes and your hands, so that it stick
   <h1>Todo List</h1>
 ```
 
-We need a way to get *to* our new view, so we pop open the ```todos_example/app/main/views/main/main.html``` file and, below the line ```html <:nav href="/" text="Home">``` we'll add:
+We need a way to get *to* our new view, so we pop open the ```todos_example/app/main/views/main/main.html``` file and, below the line ```<:nav href="/" text="Home">``` we'll add:
 
 ```html
   <:nav href="/todos" text="Todos">
